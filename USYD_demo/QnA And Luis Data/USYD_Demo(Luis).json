@@ -1,0 +1,386 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "USYD_Demo",
+  "desc": "USYD DEMO",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Acc_AccessTo"
+    },
+    {
+      "name": "Acc_Balance"
+    },
+    {
+      "name": "Acc_GetNumber"
+    },
+    {
+      "name": "Acc_Info"
+    },
+    {
+      "name": "Acc_Notes"
+    },
+    {
+      "name": "Inv_LeftPOBal"
+    },
+    {
+      "name": "Inv_PaidStatus"
+    },
+    {
+      "name": "Inv_PayDate"
+    },
+    {
+      "name": "Inv_ReasonUnpaid"
+    },
+    {
+      "name": "Inv_Status"
+    },
+    {
+      "name": "Inv_StatusAge"
+    },
+    {
+      "name": "Inv_SupplierExistCheck"
+    },
+    {
+      "name": "Inv_SupplierPaid"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "PO_Approver"
+    },
+    {
+      "name": "PO_BalanceCheck"
+    },
+    {
+      "name": "PO_DateApproved"
+    },
+    {
+      "name": "PO_DispatchedDate"
+    },
+    {
+      "name": "PO_DispatchedLocation"
+    },
+    {
+      "name": "PO_DispatchStatus"
+    },
+    {
+      "name": "PO_GetNumber"
+    },
+    {
+      "name": "PO_List"
+    },
+    {
+      "name": "PO_ListInvPaid"
+    },
+    {
+      "name": "PO_Open"
+    },
+    {
+      "name": "PO_Status"
+    }
+  ],
+  "entities": [
+    {
+      "name": "AccountNumber"
+    },
+    {
+      "name": "InvoiceNumber"
+    },
+    {
+      "name": "PONumber"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "what is my account balance?",
+      "intent": "Acc_Balance",
+      "entities": []
+    },
+    {
+      "text": "what is my purchase order number?",
+      "intent": "PO_GetNumber",
+      "entities": []
+    },
+    {
+      "text": "what purchase orders have been raised against account 123456?",
+      "intent": "PO_List",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 54,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "what open purchase orders do i have?",
+      "intent": "PO_Open",
+      "entities": []
+    },
+    {
+      "text": "who approved purchase order 123456?",
+      "intent": "PO_Approver",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 28,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "what is the status of purchase order 12345?",
+      "intent": "PO_Status",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 37,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "has purchase order xxxxxx been dispatched?",
+      "intent": "PO_DispatchStatus",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 19,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "when was purchase order 12345 approved?",
+      "intent": "PO_DateApproved",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "how many invoices have been paid against purchase order 123456?",
+      "intent": "PO_ListInvPaid",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 56,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "what invoices have been paid against purchase order 12345?",
+      "intent": "PO_ListInvPaid",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 52,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "when did purchase order 123456 get sent out?",
+      "intent": "PO_DispatchedDate",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "where was purchase order 12345 sent to?",
+      "intent": "PO_DispatchedLocation",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "how much balance do i have left on purchase order 12345 ?",
+      "intent": "PO_BalanceCheck",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 50,
+          "endPos": 54
+        }
+      ]
+    },
+    {
+      "text": "what is the status of invoice 123456 ?",
+      "intent": "Inv_Status",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 30,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how long has invoice 12345 been in its current stage?",
+      "intent": "Inv_StatusAge",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "what is the scheduled payment date for invoice xxxxxx?",
+      "intent": "Inv_PayDate",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 47,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "when will invoice xxxxxx be paid?",
+      "intent": "Inv_PayDate",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "how long will it be until my invoice is paid?",
+      "intent": "Inv_PayDate",
+      "entities": []
+    },
+    {
+      "text": "does supplier 12345 exist in the system?",
+      "intent": "Inv_SupplierExistCheck",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 14,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "why hasn't invoice 12345 been paid?",
+      "intent": "Inv_ReasonUnpaid",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "has invoice 12345 been paid?",
+      "intent": "Inv_PaidStatus",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "has supplier 12345 been paid?",
+      "intent": "Inv_SupplierPaid",
+      "entities": [
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "is there balance left in purchase order xxxxxx to pay invoice xxxxxx?",
+      "intent": "Inv_LeftPOBal",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 40,
+          "endPos": 45
+        },
+        {
+          "entity": "InvoiceNumber",
+          "startPos": 62,
+          "endPos": 67
+        }
+      ]
+    },
+    {
+      "text": "what is the balance for account 12345?",
+      "intent": "Acc_Balance",
+      "entities": [
+        {
+          "entity": "AccountNumber",
+          "startPos": 32,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "what accounts do i have access to?",
+      "intent": "Acc_AccessTo",
+      "entities": []
+    },
+    {
+      "text": "what are the notes on account xxxxxx?",
+      "intent": "Acc_Notes",
+      "entities": [
+        {
+          "entity": "AccountNumber",
+          "startPos": 30,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "what is the account information on account xxxxxx?",
+      "intent": "Acc_Info",
+      "entities": [
+        {
+          "entity": "AccountNumber",
+          "startPos": 43,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "what is the account number for po 12345?",
+      "intent": "Acc_GetNumber",
+      "entities": [
+        {
+          "entity": "PONumber",
+          "startPos": 34,
+          "endPos": 38
+        }
+      ]
+    }
+  ]
+}

@@ -72,7 +72,7 @@ namespace USYD_demo.Dialogs
                     MaxAttempts = 3;
                     IsQnASuccess = true;
                     context.ConversationData.SetValue<bool>("MaxedOutAttempts", false);
-                    await context.PostAsync("We found the below information from Knowledge Base!");
+                    //await context.PostAsync("We found the below information from Knowledge Base!");
                     await context.PostAsync(responseMsg);
                 }
                 else

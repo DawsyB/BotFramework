@@ -7,11 +7,13 @@ using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using System;
 
+
 namespace USYD_demo
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+         
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -20,7 +22,8 @@ namespace USYD_demo
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.mainDialog());                
+                await Conversation.SendAsync(activity, () => new Dialogs.mainDialog());     
+                      
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
